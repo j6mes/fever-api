@@ -1,13 +1,12 @@
 language: python
 python:
   - "3.6"
-before_install:
-  - . version.sh
 install:
   - python setup.py install
 script:
   - echo "no script"
 before_deploy:
+  - . version.sh
   - python setup.py sdist
 deploy:
   provider: pypi

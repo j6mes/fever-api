@@ -23,14 +23,6 @@ def fever_web_api(predict_function):
     app = Flask("fever-api")
     app.logger.info("Init FEVER API web application")
 
-    @app.route("/", methods=["GET"])
-    def home():
-        return "home"
-
-    @app.route("/status", methods=["GET"])
-    def status():
-        pass
-
     @app.route("/predict", methods=["POST"])
     def predict():
         if request.json is None:

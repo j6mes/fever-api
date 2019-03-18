@@ -10,7 +10,7 @@ install = [req for req in reqs if not req.startswith("git+git://")]
 depends = [req.replace("git+git://", "git+http://") for req in reqs if req.startswith("git+git://")]
 
 setup(
-    name='fever-allennlp',
+    name='fever-api',
     version='0.0.0',
     author='James Thorne',
     author_email='james@jamesthorne.co.uk',

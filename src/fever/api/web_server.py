@@ -20,7 +20,7 @@ class FEVERRequestInstance(dict):
 
 
 def fever_web_api(predict_function):
-    app = Flask("fever-api")
+    app = Flask(__name__)
     app.logger.info("Init FEVER API web application")
 
     @app.route("/predict", methods=["POST"])
@@ -36,7 +36,6 @@ def fever_web_api(predict_function):
         except TypeError:
             return json_response(wrap_error("The instances field is not iterable"), 400)
 
-
         if isinstance(request.json["instances"], str):
             return json_response(wrap_error("Instances field must not be a string"), 400)
 
@@ -50,7 +49,6 @@ def fever_web_api(predict_function):
             instances.extend([FEVERRequestInstance(**instance) for instance in request.json["instances"]])
         else:
             return json_response(wrap_error("Instances field must contain a list of strings or objects containing 'id':int and 'claim':str fields"), 400)
-
 
         app.logger.info("Predicting with {} instances".format(len(instances)))
         predictions = predict_function(instances)

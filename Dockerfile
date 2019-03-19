@@ -13,4 +13,4 @@ ADD https://s3-eu-west-1.amazonaws.com/fever.public/wiki_index/fever-tfidf-ngram
 ADD https://s3-eu-west-1.amazonaws.com/fever.public/wiki_index/fever.db data/fever/fever.db
 ADD https://s3-eu-west-1.amazonaws.com/fever.public/wiki-pages.zip data/wiki-pages.zip
 
-RUN unzip -d data/wiki-pages data/wiki-pages.zip
+RUN unzip -d data data/wiki-pages.zip

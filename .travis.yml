@@ -8,7 +8,7 @@ before_install:
 install:
   - python setup.py install
 script:
-  - travis_wait 100 docker build -t feverai/common .
+  - echo "no script"
 before_deploy:
   - python setup.py sdist
 deploy:

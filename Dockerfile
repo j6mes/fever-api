@@ -18,3 +18,5 @@ ADD https://s3-eu-west-1.amazonaws.com/fever.public/paper_dev.jsonl data/fever-d
 ADD https://s3-eu-west-1.amazonaws.com/fever.public/paper_test.jsonl data/fever-data/paper_test.jsonl
 ADD https://s3-eu-west-1.amazonaws.com/fever.public/shared_task_dev.jsonl data/fever-data/shared_task_dev.jsonl
 ADD https://s3-eu-west-1.amazonaws.com/fever.public/shared_task_test.jsonl data/fever-data/shared_task_test.jsonl
+
+RUN unzip -d data data/wiki-pages.zip && rm data/wiki-pages.zip

@@ -1,3 +1,6 @@
+import logging
+from logging.config import dictConfig
+
 from flask import Flask, request
 from flask_responses import json_response
 
@@ -63,8 +66,10 @@ def fever_web_api(predict_function):
     return app
 
 
-def sample_application():
+def sample_application(*args):
     def predict_fuction(instances):
         return [{"predicted_label":"NOT ENOUGH INFO", "predicted_evidence":[]} for _ in instances]
+
+    print("sample application")
 
     return fever_web_api(predict_fuction)

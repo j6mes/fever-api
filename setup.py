@@ -18,7 +18,7 @@ setup(
     description='Fact Extraction and VERification API',
     long_description="readme",
     license=license,
-    python_requires='>=3.6',
+    python_requires='>=3.5',
     package_dir={'fever': 'src/fever',
                  'fever.api': 'src/fever/api'},
     packages=['fever',
